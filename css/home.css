@@ -57,7 +57,7 @@ header h3::after{content: "Web Developer";animation: changeText 6s infinite 1s l
 }
 
 /* Laptops */
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1400px){
   .container{justify-content: space-evenly;}
 
   header h1{font-size: 4em;}
