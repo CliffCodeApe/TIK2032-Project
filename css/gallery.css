@@ -1,29 +1,73 @@
-.container{
-    background: var(--background);
-    height: 100svh;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    text-align: center;
-}
-
+header{display: grid; place-items: center; text-align: center;}
 header h1{font-size: 80px;font-weight: 400;}
 
 picture{
     display: flex;
     align-items: center;
     gap: 30px;
-    margin-top: 100px;
+    margin-top: 10px;
+    overflow: hidden;
 }
 
-picture img{width: 400px;}
+picture img{width: 300px; transition: .2s linear; cursor: pointer;}
 
+picture img:hover{
+    transform: scale(1.1);
+}
 
-/* Laptop */
-@media screen and (max-width: 1024px) {picture img{width: 300px;}}
+button{
+    color: var(--white-text);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 25px;
+}
+
+#edit{background-color: var(--primary);}
+
+#close{display: none; background-color: var(--secondary);}
+
+#controls{
+    display: none;
+    flex-flow: column;
+    padding-top: 10px;
+}
+
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+}
+
+.popup span{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.popup img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 750px;
+    object-fit: cover;
+}
 
 /* Tablets */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 950px){
     nav h1{font-size: 2em;}
     header h1{font-size: 3em;}
     header h3{font-size: 1.5em;}
@@ -33,12 +77,13 @@ picture img{width: 400px;}
         scroll-snap-type: x mandatory;
     }
     picture img{width: 400px; scroll-snap-align:center;}
+    .popup img{width: 500px;}
 }
 
 /* Phones */
 @media screen and (max-width: 500px) {
-    nav h1{font-size: 1.5em;}
-    header h1{font-size: 2em;}
+    nav h1{font-size: 1.5em;  text-align: center;}
+    header h1{font-size: 4em;}
     header h3{font-size: 1em;}
     picture{
         width: 300px;
@@ -46,4 +91,5 @@ picture img{width: 400px;}
         scroll-snap-type: x mandatory;
     }
     picture img{width: 300px; scroll-snap-align:center;}
+    .popup img{width: 250px;}
 }

@@ -1,52 +1,23 @@
-.container{height: 100svh;}
-
 .contact{
     display: flex;
     flex-flow: column;
     align-items: center;
+    row-gap: 50px;
 }
 
-.contact-form{padding: 25px;border-radius: 5px;}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid var(--primary);
-  border-radius: 3px;
-  
+.contact-img{
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: solid 7px aliceblue;
+  background-position: 50% 70%;
+  background-size: cover;
+  background-image: url(../img/me.jpg);
 }
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus{outline: 1px solid var(--primary);}
-
-.contact-form textarea {
-    width: 100%;
-    border: 1px solid var(--primary);
-    border-radius: 3px;
-}
-
-.contact-form input[type="text"]::placeholder,
-.contact-form input[type="email"]::placeholder,
-.contact-form textarea::placeholder {
-  color: var(--text);
-}
-
-.contact-form input[type="submit"] {
-    background-color: var(--accent);
-    color: var(--white-text);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contact-form input[type="submit"]:hover {background-color: #c42db5;}
 
 /* Phones */
 @media screen and (max-width:500px) {
-    .contact h2{font-size:.9em;}
-
+    .contact h2{font-size:.85em;}
+    .contact-img{width: 300px; height: 300px;}
     nav h1{font-size: 1.5em; text-align: center;}
 }

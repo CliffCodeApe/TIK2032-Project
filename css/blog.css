@@ -1,30 +1,25 @@
-.container{height: 100svh; text-align: center;}
-
 header{
     display: flex;
-    justify-content: space-between;
-    padding: 0 2%;
-    margin-bottom: 50px;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .blog{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
-    gap: 20px;
-    margin: 2%;
+    margin: 5%;
 }
 
 header h1{font-size: 50px;}
 
-input{padding: 15px;}
+input{padding: 15px; background-color: var(--primary); border: 0px;}
 
-input:focus{outline: 1px solid var(--primary);}
+input:focus{outline: 1px solid var(--secondary);}
 
-input::placeholder{color: var(--text);}
+input::placeholder{color: var(--white-text);}
 
-article{width: 400px;}
-
+article{margin: 25px;}
 article img{width: 100%;}
 
 article p{margin-bottom: 15px;}
@@ -35,16 +30,14 @@ article a{
     background-color: var(--primary);
 }
 
-@media screen and (max-width:1024px) {.blog{grid-template-columns: repeat(2, 1fr);}}
+@media screen and (max-width:1024px) {.blog{grid-template-columns: repeat(2, 1fr);}.container{height: 150svh;}}
 
-@media screen and (max-width:768px) {
-    .blog{grid-template-columns: repeat(2, 1fr);}
-    article{width: 300px;}
-}
+@media screen and (max-width:768px) {.blog{grid-template-columns: repeat(2, 1fr);} .container{height: 120svh;}}
 
 @media screen and (max-width:500px) {
+    .container{height: 150svh;}
     .blog{grid-template-columns: repeat(1, 1fr);}
-    article{width: 200px;}
-    nav h1{font-size: 1.5em; align-items: center;}    
+    nav h1{font-size: 1.5em; text-align: center;}    
     header h1{font-size: 1.5em;}
+    input{padding: 10px;}
 }
