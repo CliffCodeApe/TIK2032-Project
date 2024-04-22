@@ -23,9 +23,15 @@ button{
     font-size: 25px;
 }
 
-#edit{background-color: var(--primary);}
+#edit{background-color: var(--primary); cursor: pointer;}
 
-#close{display: none; background-color: var(--secondary);}
+.panels{
+    display: flex;
+}
+
+#close{display: none; background-color: var(--secondary); cursor: pointer;}
+
+#reset{display: none; background-color: var(--accent); cursor: pointer;}
 
 #controls{
     display: none;
