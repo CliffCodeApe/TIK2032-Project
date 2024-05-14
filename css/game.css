@@ -1,0 +1,58 @@
+.games{
+    display: grid;
+    place-items: center;
+    border-top: 1px solid white;
+}
+
+.games header{
+    border-bottom: 1px solid white;
+}
+
+.game-card{
+    display: flex;
+    flex-flow: column;
+    width: 400px;
+    background-color: var(--primary);
+    border: 5px solid var(--white-text);
+    border-radius: 10px;
+    padding: 12px;
+    color: var(--white-text);
+    text-align: center;
+}
+
+.game-header img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.game-header{
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    align-items: center;
+}
+
+.game-header a{
+    margin-top: 5px;
+    background-color: var(--secondary);
+    padding: 10px;
+    width: 70px;
+    transition: background-color .1s linear;
+}
+.game-header a:hover{
+    background-color: #bb5ac4;
+}
+
+
+.game-footer{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.game-footer a img{width: 100%;}
+
+.game-footer a{width: 15%;}
+

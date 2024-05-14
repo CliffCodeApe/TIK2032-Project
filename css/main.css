@@ -1,0 +1,32 @@
+:root{
+    --text: #03000f;
+    --white-text: #ebe9fc;
+    --background: #fbfaff;
+    --dark-background: #010104;
+    --primary: #3f06f9;
+    --secondary: #f173fc;
+    --accent: #fa38e7;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono";
+    text-decoration: none;
+}
+
+a{color: inherit;}
+nav h1{font-size: 30px;}
+nav a:hover{text-decoration: underline;}
+
+.container{
+    height: 100svh;
+    display: grid;
+    grid-template-rows: 150px.85fr;
+    place-items: center;
+}
+
+.dark{
+    background-color: var(--dark-background);
+    color: var(--white-text);
+}
