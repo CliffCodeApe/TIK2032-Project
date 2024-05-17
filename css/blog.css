@@ -17,8 +17,7 @@ button{
 .blog{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    margin: 5%;
+    place-items: center; margin: 5%;
 }
 
 header h1{font-size: 50px;}
@@ -30,7 +29,7 @@ input:focus{outline: 1px solid var(--secondary);}
 input::placeholder{color: var(--white-text);}
 
 article{margin: 25px;}
-article img{width: 100%;}
+article img{width: 400px;}
 
 article p{margin-bottom: 15px;}
 
@@ -38,6 +37,14 @@ article a{
     color: #EBE9FC;
     padding: 10px;
     background-color: var(--primary);
+}
+
+.btn-warning{
+    background-color: rgb(182, 182, 10);
+}
+
+.btn-danger{
+    background-color: red;
 }
 
 @media screen and (max-width:1024px) {.blog{grid-template-columns: repeat(2, 1fr);}.container{height: 150svh;}}

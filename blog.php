@@ -35,15 +35,18 @@
                     $q = "SELECT * FROM blog";
                     $data = mysqli_query($con, $q);
                     while($row = mysqli_fetch_array($data)){
+                        $id = $row["id"];
                         $img = $row['img'];
                         $title = $row['title'];
                         $content = $row['content'];
                         echo "
                             <article>
-                                <img src=\"img\/$img\">
+                                <img src=\"img/$img\">
                                 <h2>$title</h2>
                                 <p>$content</p>
                                 <a href= \"# \">See More</a>
+                                <a href= \"update_blog.php/?id=$id \" class=\" btn-warning\" >Edit</a>
+                                <a href= \"# \" class=\" btn-danger\">Delete</a>
                             </article>
                         ";
                     }
