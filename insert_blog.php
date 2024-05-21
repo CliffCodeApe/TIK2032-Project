@@ -39,6 +39,7 @@
                 <br>
                 <button type="submit" class="btn">Submitt</button>
             </form>
+            <a href="./blog.php" class="btn-warning">Go Back</a>
         </div>
 
         <script src="js/script.js"></script>

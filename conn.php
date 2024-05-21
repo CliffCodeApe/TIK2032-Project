@@ -1,5 +1,4 @@
 <?php
-
 $db = 'web';
 $name = 'backend';
 $pass = '123';

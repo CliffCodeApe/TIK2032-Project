@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Update Blog</title>
-        <link rel="stylesheet" href="../css/main.css">
-            <link rel="stylesheet" href="../css/blog.css">
+        <link rel="stylesheet" href="css/main.css">
+            <link rel="stylesheet" href="css/blog.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -45,12 +45,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-group">
                 <label for="img">Image</label>
                 <input type="file" name="img" class="form-control">
-                <img src="../img/<?php echo $post['img']; ?>" alt="Current Image" width="200">
+                <img src="img/<?php echo $post['img']; ?>" alt="Current Image" width="200">
             </div>
             <br>
             <button type="submit" class="btn">Update</button>
         </form>
+        <a href="blog.php" class="btn-warning">Go Back</a>
     </div>
+
 
         <script src="../js/script.js"></script>
     </body>

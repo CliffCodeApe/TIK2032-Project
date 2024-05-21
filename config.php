@@ -70,3 +70,28 @@ function update($con, $id, $title, $content, $img) {
         exit();
     }
 }
+
+function destroy($con, $id) {
+    $q = "SELECT img FROM blog WHERE id = ?";
+    $stmt = mysqli_prepare($con, $q);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $img);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
+
+    $q = "DELETE FROM blog WHERE id = ?";
+    $state = mysqli_prepare($con, $q);
+    mysqli_stmt_bind_param($state, "i", $id);
+    mysqli_stmt_execute($state);
+    if (mysqli_stmt_affected_rows($state) > 0)
+    {
+        $imgFile = "img/" . $img;
+        if (file_exists($imgFile)) unlink($imgFile);
+        echo "Blog deleted successfully.";
+    }
+    else echo "Blog deleting error: " . mysqli_error($con);
+
+    header("Location: blog.php");
+    exit();
+}

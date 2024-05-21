@@ -27,26 +27,35 @@
             </header>
 
             <a href="insert_blog.php" class="btn">Add +</a>
-
+            <button ></button>
             <div class="blog">
                 <?php
                     include ("conn.php");
                     include ("config.php");
+
+                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
+                        $id = $_POST['id'];
+                        destroy($con, $id);
+                    }
+
                     $q = "SELECT * FROM blog";
                     $data = mysqli_query($con, $q);
                     while($row = mysqli_fetch_array($data)){
                         $id = $row["id"];
                         $img = $row['img'];
                         $title = $row['title'];
-                        $content = $row['content'];
+                        $content = strlen($row['content']) > 100 ? substr($row['content'], 0, 200) . '...' : $row['content'];;
                         echo "
                             <article>
                                 <img src=\"img/$img\">
                                 <h2>$title</h2>
                                 <p>$content</p>
-                                <a href= \"# \">See More</a>
-                                <a href= \"update_blog.php/?id=$id \" class=\" btn-warning\" >Edit</a>
-                                <a href= \"# \" class=\" btn-danger\">Delete</a>
+                                <a href=\"show_blog.php?id=$id\" class=\"btn\">See More</a>
+                                <a href=\"update_blog.php?id=$id\" class=\" btn-warning\">Edit</a>
+                                <form method=\"post\" action=\"\" style=\"display:inline;\" onsubmit=\"return confirmDelete()\">
+                                    <input type=\"hidden\" name=\"id\" value=\"$id\">
+                                    <button type=\"submit\" name=\"delete\" class=\"btn-danger\">Delete</button>
+                                </form>
                             </article>
                         ";
                     }
@@ -54,6 +63,9 @@
             </div>
 
         </div>
+        <script>
+            function confirmDelete(){return confirm('Are you sure you want to delete this blog?')}
+        </script>
         <script src="js/script.js"></script>
     </body>
 </html>

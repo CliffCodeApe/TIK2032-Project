@@ -9,7 +9,7 @@ button{
 }
 
 .btn{
-    background-color: var(--accent);
+    background-color: var(--primary);
     padding: 10px;
     color: var(--white-text);
 }
@@ -41,10 +41,16 @@ article a{
 
 .btn-warning{
     background-color: rgb(182, 182, 10);
+    padding: 10px;
+    color: var(--white-text);
+    cursor: pointer;
 }
 
 .btn-danger{
     background-color: red;
+    padding: 10px;
+    color: var(--white-text);
+    cursor: pointer;
 }
 
 @media screen and (max-width:1024px) {.blog{grid-template-columns: repeat(2, 1fr);}.container{height: 150svh;}}
@@ -65,6 +71,7 @@ article a{
     display: flex;
     justify-content: center;
     align-items: center;    
+    flex-flow: column;
     margin: auto;
     width: 50vw;
     height: 100vh;
