@@ -26,7 +26,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Insert Blog</title>
+        <title>Show Blog</title>
         <link rel="stylesheet" href="css/main.css">
             <link rel="stylesheet" href="css/blog.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
